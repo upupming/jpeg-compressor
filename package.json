@@ -1,0 +1,50 @@
+{
+  "name": "jpeg-compressor",
+  "version": "1.0.0",
+  "description": "compress bmp to jpeg",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "bmp-js": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.13.4",
+    "coveralls": "^3.0.3",
+    "eslint-plugin-typescript": "^0.14.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.0.2",
+    "should": "^13.2.3",
+    "standard": "*",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.4.3",
+    "typescript-eslint-parser": "^22.0.0"
+  },
+  "standard": {
+    "parser": "typescript-eslint-parser",
+    "plugins": [
+      "typescript"
+    ]
+  },
+  "scripts": {
+    "test": "mocha --require ts-node/register 'test/**/*.{ts,tsx}' --timeout 100000 > test.log",
+    "build": "tsc -p .",
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- --timeout 100000",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "lint": "standard --env mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/upupming/jpeg-compressor.git"
+  },
+  "keywords": [
+    "jpeg",
+    "compression"
+  ],
+  "author": "upupming",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/upupming/jpeg-compressor/issues"
+  },
+  "homepage": "https://github.com/upupming/jpeg-compressor#readme"
+}
